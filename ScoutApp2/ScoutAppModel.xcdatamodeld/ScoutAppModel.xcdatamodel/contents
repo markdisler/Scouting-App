@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Xcode 4.3" sourceLanguage="Objective-C" userDefinedModelVersionIdentifier="">
+    <entity name="CDSheet" representedClassName="CDSheet" syncable="YES">
+        <attribute name="author" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateModified" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="imageName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isSharing" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDUser" inverseName="sheets" inverseEntity="CDUser" syncable="YES"/>
+        <relationship name="sheetEntries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDSheetEntry" inverseName="parentSheet" inverseEntity="CDSheetEntry" syncable="YES"/>
+        <relationship name="teams" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTeam" inverseName="parentSheet" inverseEntity="CDTeam" syncable="YES"/>
+    </entity>
+    <entity name="CDSheetEntry" representedClassName="CDSheetEntry" syncable="YES">
+        <attribute name="entryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entryProperties" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="entryType" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="positionOnList" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parentSheet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDSheet" inverseName="sheetEntries" inverseEntity="CDSheet" syncable="YES"/>
+    </entity>
+    <entity name="CDTeam" representedClassName="CDTeam" syncable="YES">
+        <attribute name="isFavorited" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="teamIdentifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teamName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="teamNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parentSheet" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDSheet" inverseName="teams" inverseEntity="CDSheet" syncable="YES"/>
+        <relationship name="teamProperties" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDTeamAttribute" inverseName="parentTeam" inverseEntity="CDTeamAttribute" syncable="YES"/>
+    </entity>
+    <entity name="CDTeamAttribute" representedClassName="CDTeamAttribute" syncable="YES">
+        <attribute name="entryId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="value" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="parentTeam" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTeam" inverseName="teamProperties" inverseEntity="CDTeam" syncable="YES"/>
+    </entity>
+    <entity name="CDUser" representedClassName="CDUser" syncable="YES">
+        <attribute name="me" optional="YES" attributeType="Boolean" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="userKey" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="sheets" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CDSheet" inverseName="owner" inverseEntity="CDSheet" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CDSheet" positionX="-407" positionY="-270" width="128" height="180"/>
+        <element name="CDSheetEntry" positionX="-479" positionY="-7" width="128" height="135"/>
+        <element name="CDTeam" positionX="-2" positionY="-202" width="128" height="135"/>
+        <element name="CDTeamAttribute" positionX="207" positionY="-144" width="128" height="90"/>
+        <element name="CDUser" positionX="-578" positionY="-486" width="128" height="120"/>
+    </elements>
+</model>

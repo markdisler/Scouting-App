@@ -1,0 +1,24 @@
+//
+//  Scouter-Prefix.pch
+//  ScoutApp2
+//
+//  Created by Mark on 7/23/15.
+//  Copyright (c) 2015 mark. All rights reserved.
+//
+
+#ifndef ScoutApp2_Scouter_Prefix_pch
+#define ScoutApp2_Scouter_Prefix_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "Constants.h"
+#import "GlobalAsset.h"
+#import "CDDataManager.h"
+
+#import "CDUser.h"
+#import "CDTeamAttribute.h"
+#import "CDTeam.h"
+#import "CDSheetEntry.h"
+#import "CDSheet.h"
+#endif
