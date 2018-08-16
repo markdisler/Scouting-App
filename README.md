@@ -4,9 +4,9 @@ Back in the day, I was a member of one of my high school's FTC robotics teams.  
 
 ## Key Components
 
-This scouting app allows the user to create multiple sheets (CDSheet.h).  Each sheet stores a list of "entries" where an entry (CDSheetEntry.h) is simply a question that you would ask another team, as well as the input component you wish to use.  For example, you can have an entry whose question is "How many blocks can this robot lift?" with the input component being a UIStepper.  Other options included UISliders, UISegmentControls, UITextFields, and UISwitches.  This structure gives the user (or the team) the chance to fully customize a scouting sheet with the data collection settings that best suits them.
+This scouting app allows the user to create multiple sheets `CDSheet.h`.  Each sheet stores a list of "entries" where an entry `CDSheetEntry.h` is simply a question that you would ask another team, as well as the input component you wish to use.  For example, you can have an entry whose question is "How many blocks can this robot lift?" with the input component being a UIStepper.  Other options included UISliders, UISegmentControls, UITextFields, and UISwitches.  This structure gives the user (or the team) the chance to fully customize a scouting sheet with the data collection settings that best suits them.
 
-The sheet instance stores a list of teams (CDTeam.h) that have been scouted already.  You can add new teams in the app.  The answers to the sheet's questions will all be stored as part of that team's data.
+The sheet instance stores a list of teams `CDTeam.h` that have been scouted already.  You can add new teams in the app.  The answers to the sheet's questions will all be stored as part of that team's data.
 
 This structure allows for custom scouting sheets which will store the questions and each team's answers in one place.
 
@@ -20,6 +20,6 @@ This structure allows for custom scouting sheets which will store the questions 
 
 ## Reflections
 
-This application works very well as a standalone tool.  In the future, I'd be interested on getting a backend in place to "scout" as a team and have all of the data in one place.  It's customizable, fast, and convenient and accomplishes the task that we wanted to simplify.
+This application works very well as a standalone tool.  In the future, I'd be interested in getting a backend in place to "scout" as a team and have all of the data in one place.  It's customizable, fast, and convenient and accomplishes the task that we wanted to simplify.
 
 
